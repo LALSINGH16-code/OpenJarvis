@@ -1,0 +1,447 @@
+Metadata-Version: 2.4
+Name: openjarvis
+Version: 1.0.0
+Summary: Open-source AI desktop assistant
+Author-email: Lalsingh <contact@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/LALSINGH16-code/OpenJarvis
+Project-URL: Repository, https://github.com/LALSINGH16-code/OpenJarvis.git
+Project-URL: Issues, https://github.com/LALSINGH16-code/OpenJarvis/issues
+Keywords: ai,assistant,desktop,automation,local-first
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: Multimedia
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rich>=13.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: httpx>=0.25.0
+Requires-Dist: psutil>=5.9.0
+Requires-Dist: pypdf>=3.0.0
+Requires-Dist: python-docx>=0.8.11
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Provides-Extra: gui
+Requires-Dist: PySide6>=6.0.0; extra == "gui"
+Provides-Extra: build
+Requires-Dist: PyInstaller>=6.0.0; extra == "build"
+Dynamic: license-file
+
+# OpenJarvis
+
+> Open-source AI desktop assistant for Linux and Windows.
+
+OpenJarvis is a local-first desktop AI assistant designed to connect powerful AI models with your computer.
+
+It can eventually help you **launch applications, manage files, run commands, search your system, take notes, use local AI models, and automate everyday tasks** — while giving you control over which AI provider you use.
+
+The project is currently under active development.
+
+---
+
+## What is OpenJarvis?
+
+Most AI assistants are built around a single cloud provider.
+
+OpenJarvis takes a different approach.
+
+You choose the AI provider.
+
+You can connect OpenJarvis to:
+
+* OpenRouter
+* OpenAI
+* Google Gemini
+* Anthropic Claude
+* Groq
+* Ollama
+* Other compatible providers
+
+You can also run local models through Ollama without sending your conversations to a cloud AI provider.
+
+---
+
+## Features
+
+### AI
+
+* Multi-provider AI architecture
+* OpenRouter support
+* OpenAI support
+* Google Gemini support
+* Anthropic Claude support
+* Groq support
+* Ollama local AI support
+* Switch models without changing the assistant
+* Local AI mode
+* Provider-based architecture for future integrations
+
+### Desktop
+
+* Launch applications
+* Search files
+* Create and manage files
+* Run terminal commands
+* System information
+* Screenshots
+* Clipboard tools
+
+### Productivity
+
+* Notes
+* Tasks
+* Reminders
+* Persistent memory
+* Search saved information
+
+### Documents
+
+* Read PDF files
+* Read text files
+* Read Markdown files
+* Read DOCX files
+* Summarize documents
+* Explain code
+* Review files with AI
+
+### Automation
+
+OpenJarvis is designed to turn natural-language instructions into safe desktop actions.
+
+For example:
+
+```text
+Open Firefox.
+
+Find my project folder.
+
+Create a folder called OpenJarvis.
+
+Show me my CPU and RAM usage.
+```
+
+The goal is to make these interactions simple while keeping potentially dangerous actions behind confirmation.
+
+---
+
+## Architecture
+
+OpenJarvis uses a provider-based architecture.
+
+```text
+                    OpenJarvis
+                         │
+                  Assistant Core
+                         │
+                  Provider Manager
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+   OpenRouter         Ollama        Direct APIs
+                                      │
+                          ┌───────────┼───────────┐
+                          │           │           │
+                       OpenAI      Gemini      Claude
+```
+
+This allows new providers to be added without rewriting the assistant.
+
+---
+
+## Why OpenJarvis?
+
+OpenJarvis is built around a few simple principles:
+
+### Local-first
+
+Local AI should be a first-class option.
+
+### Provider freedom
+
+Users should not be forced into one AI provider.
+
+### Privacy
+
+Your data should not leave your computer unless you choose a cloud provider or service that requires it.
+
+### Open source
+
+The project should remain transparent and community-driven.
+
+### Extensible
+
+Developers should be able to add new providers, tools and plugins.
+
+### Safe
+
+AI-generated actions should not automatically perform dangerous operations without user confirmation.
+
+---
+
+## Supported Platforms
+
+Currently targeting:
+
+* Linux
+* Windows
+
+macOS support may be added later.
+
+---
+
+## Tech Stack
+
+OpenJarvis is being built primarily with:
+
+| Component          | Technology                             |
+| ------------------ | -------------------------------------- |
+| Language           | Python                                 |
+| AI                 | OpenRouter, Ollama and other providers |
+| Database           | SQLite                                 |
+| System information | psutil                                 |
+| Documents          | Python document libraries              |
+| CLI                | Rich                                   |
+| Packaging          | PyInstaller                            |
+| Testing            | pytest                                 |
+
+---
+
+## Project Status
+
+**Development status: Early Development**
+
+OpenJarvis is not yet a finished desktop assistant.
+
+The architecture and features are being developed step by step.
+
+### Planned roadmap
+
+* [ ] Core assistant
+* [ ] OpenRouter integration
+* [ ] Ollama integration
+* [ ] Provider system
+* [ ] Application launcher
+* [ ] File search
+* [ ] File management
+* [ ] Safe terminal execution
+* [ ] Notes
+* [ ] Tasks
+* [ ] Memory
+* [ ] System monitoring
+* [ ] Document analysis
+* [ ] Plugin system
+* [ ] Voice input
+* [ ] Voice output
+* [ ] Desktop GUI
+* [ ] Windows support
+* [ ] Linux packages
+* [ ] Stable v1.0 release
+
+---
+
+## Installation
+
+> Installation instructions will be added as the first usable release is published.
+
+For development:
+
+```bash
+git clone https://github.com/LALSINGH16-code/OpenJarvis.git
+
+cd OpenJarvis
+
+python -m venv .venv
+```
+
+### Linux
+
+```bash
+source .venv/bin/activate
+```
+
+### Windows
+
+```powershell
+.venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run:
+
+```bash
+python -m openjarvis
+```
+
+---
+
+## AI Providers
+
+### OpenRouter
+
+OpenRouter provides access to many AI models through a single API.
+
+You can configure an OpenRouter API key and select the model you want to use.
+
+### Ollama
+
+Ollama allows OpenJarvis to connect to models running locally on your computer.
+
+This provides an option for users who want to keep AI processing local.
+
+### Direct Providers
+
+OpenJarvis is designed to support direct integrations with providers such as:
+
+* OpenAI
+* Google Gemini
+* Anthropic
+* Groq
+
+More providers can be added through the provider architecture.
+
+---
+
+## Configuration
+
+API keys should never be committed to GitHub.
+
+Use environment variables or the OpenJarvis configuration system.
+
+Example:
+
+```env
+OPENROUTER_API_KEY=
+OPENAI_API_KEY=
+GEMINI_API_KEY=
+ANTHROPIC_API_KEY=
+GROQ_API_KEY=
+```
+
+Keep your `.env` file private.
+
+---
+
+## Security
+
+OpenJarvis can interact with your operating system.
+
+That means security is a major part of the project.
+
+Potentially dangerous operations should require confirmation.
+
+Examples include:
+
+```text
+Delete files
+Shutdown computer
+Restart computer
+Kill processes
+Execute destructive shell commands
+Modify sensitive system files
+```
+
+Never run AI-generated shell commands blindly.
+
+---
+
+## Plugins
+
+OpenJarvis is designed to support plugins.
+
+Future plugins may provide capabilities such as:
+
+```text
+Weather
+Spotify
+GitHub
+Email
+Calendar
+Web search
+YouTube
+Smart home
+Developer tools
+```
+
+The plugin system will allow developers to extend OpenJarvis without modifying the core assistant.
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+You can contribute by:
+
+* Reporting bugs
+* Suggesting features
+* Adding AI providers
+* Creating plugins
+* Improving documentation
+* Adding tests
+* Improving performance
+* Fixing security issues
+
+Please read `CONTRIBUTING.md` before submitting a pull request.
+
+---
+
+## Security Issues
+
+Please do not publicly disclose serious security vulnerabilities in GitHub Issues.
+
+See `SECURITY.md` for information about reporting security problems.
+
+---
+
+## License
+
+OpenJarvis is released under the **MIT License**.
+
+See [`LICENSE`](LICENSE) for the full license text.
+
+---
+
+## Disclaimer
+
+OpenJarvis is an open-source software project.
+
+The project does not guarantee that AI-generated responses or commands are correct.
+
+Users are responsible for reviewing actions before allowing OpenJarvis to execute them on their system.
+
+---
+
+## Project
+
+**GitHub:**
+https://github.com/LALSINGH16-code/OpenJarvis
+
+**Status:** Early Development
+
+**License:** MIT
+
+---
+
+## Built for an open AI desktop
+
+OpenJarvis aims to give users a simple choice:
+
+**Use the AI provider you want. Run AI locally when you want. Control your own computer.**

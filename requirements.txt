@@ -1,0 +1,36 @@
+# OpenJarvis Requirements
+
+# CLI
+rich>=13.0.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# HTTP
+httpx>=0.25.0
+
+# System monitoring
+psutil>=5.9.0
+
+# PDF
+pypdf>=3.0.0
+
+# DOCX
+python-docx>=0.8.11
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Type checking (optional but recommended)
+mypy>=1.0.0
+
+# Code formatting (optional)
+black>=23.0.0
+flake8>=6.0.0
+
+# GUI (optional, installed separately if needed)
+# PySide6>=6.0.0
+
+# Packaging
+PyInstaller>=6.0.0

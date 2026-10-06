@@ -1,0 +1,2 @@
+[console_scripts]
+openjarvis = openjarvis.__main__:main

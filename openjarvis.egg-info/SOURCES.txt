@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+openjarvis/__init__.py
+openjarvis/__main__.py
+openjarvis/cli.py
+openjarvis/config.py
+openjarvis/logging_config.py
+openjarvis.egg-info/PKG-INFO
+openjarvis.egg-info/SOURCES.txt
+openjarvis.egg-info/dependency_links.txt
+openjarvis.egg-info/entry_points.txt
+openjarvis.egg-info/requires.txt
+openjarvis.egg-info/top_level.txt
+tests/test_config.py
+tests/test_database.py
+tests/test_platform.py
